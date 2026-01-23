@@ -282,7 +282,49 @@ nav {
     transition: transform 0.3s ease;
     display: inline-block;
 }
+/* Loader Background */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #12372a; /* Matches your primary green */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Stays above everything */
+    transition: opacity 0.5s ease;
+}
 
+/* The Spinner */
+.loader {
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid #ad8b3a; /* Your Gold color */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+#loader-wrapper p {
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 1px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Class to hide the loader */
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
 .social-icons a:hover {
     transform: scale(1.2); /* Pop effect on hover */
 }

@@ -10,7 +10,14 @@ const courses = [
     { title: "Noorani Qaida", desc: "Foundational reading for beginners." },
     { title: "Tajweed Mastery", desc: "Perfect your pronunciation and phonetics." },
 ];
-
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader-wrapper");
+    
+    // Add a slight delay so the transition looks smooth
+    setTimeout(() => {
+        loader.classList.add("loader-hidden");
+    }, 500);
+});
 app.get('/', (req, res) => {
     res.render('index', { courses });
 });
