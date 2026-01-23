@@ -15,3 +15,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader-wrapper");
+    
+    // Add a slight delay so the transition looks smooth
+    setTimeout(() => {
+        loader.classList.add("loader-hidden");
+    }, 500);
+});
